@@ -14,7 +14,7 @@ func (gridPoints GridPoints) Contains(gridPoint GridPoint) bool {
             return true
         }
     }
-    return false;
+    return false
 }
 
 func (gridPoints GridPoints) IsConnected() bool {
