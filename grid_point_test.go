@@ -36,3 +36,75 @@ func Test_格子点の文字列表現を取得できる(t *testing.T) {
         }
     }
 }
+
+func Test_上の格子点を隣り合っていると判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 3, Y: 8 }
+
+    if gridPoint.isNeighborOf(target) == false {
+        t.Fail()
+    }
+}
+
+func Test_右の格子点を隣り合っていると判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 4, Y: 7 }
+
+    if gridPoint.isNeighborOf(target) == false {
+        t.Fail()
+    }
+}
+
+func Test_下の格子点を隣り合っていると判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 3, Y: 6 }
+
+    if gridPoint.isNeighborOf(target) == false {
+        t.Fail()
+    }
+}
+
+func Test_左の格子点を隣り合っていると判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 2, Y: 7 }
+
+    if gridPoint.isNeighborOf(target) == false {
+        t.Fail()
+    }
+}
+
+func Test_右上の格子点を隣り合っていないと判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 4, Y: 8 }
+
+    if gridPoint.isNeighborOf(target) {
+        t.Fail()
+    }
+}
+
+func Test_右下の格子点を隣り合っていないと判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 4, Y: 6 }
+
+    if gridPoint.isNeighborOf(target) {
+        t.Fail()
+    }
+}
+
+func Test_左上の格子点を隣り合っていないと判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 2, Y: 8 }
+
+    if gridPoint.isNeighborOf(target) {
+        t.Fail()
+    }
+}
+
+func Test_左下の格子点を隣り合っていないと判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 2, Y: 6 }
+
+    if gridPoint.isNeighborOf(target) {
+        t.Fail()
+    }
+}
