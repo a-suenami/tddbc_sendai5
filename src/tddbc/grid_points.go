@@ -4,8 +4,8 @@ type GridPoints struct {
     gridPoints []GridPoint
 }
 
-func NewGridPoints(gridPoint1 GridPoint, gridPoint2 GridPoint) GridPoints {
-    return GridPoints{ gridPoints: []GridPoint{ gridPoint1, gridPoint2 } }
+func NewGridPoints(gridPoints ...GridPoint) GridPoints {
+    return GridPoints{ gridPoints: gridPoints }
 }
 
 func (gridPoints GridPoints) Contains(gridPoint GridPoint) bool {
