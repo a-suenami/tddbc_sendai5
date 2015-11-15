@@ -19,3 +19,11 @@ func Test_Yが正しく取得できる(t *testing.T) {
         t.Errorf("expected: 2, actual: %v", gridPoint.Y)
     }
 }
+
+func Test_格子点の文字列表現を取得できる(t *testing.T) {
+    gridPoint := GridPoint{ X: 1, Y: 2 }
+
+    if "(1,2)" != gridPoint.getNotation() {
+        t.Errorf("expected: \"(1,2)\", actual: \"%v\"", gridPoint.getNotation())
+    }
+}
