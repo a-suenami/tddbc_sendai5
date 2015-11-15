@@ -1,10 +1,14 @@
 package tddbc
 
+import(
+    "fmt"
+)
+
 type GridPoint struct {
     X int
     Y int
 }
 
-func (GridPoint) getNotation() string {
-    return "(1,2)"
+func (gridPoint GridPoint) getNotation() string {
+    return fmt.Sprintf("(%v,%v)", gridPoint.X, gridPoint.Y)
 }
