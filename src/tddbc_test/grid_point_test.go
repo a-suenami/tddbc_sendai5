@@ -21,6 +21,24 @@ func Test_Yが正しく取得できる(t *testing.T) {
     }
 }
 
+func Test_同一の格子点を等価である判定ができる(t *testing.T) {
+    one := GridPoint{ X: 1, Y: 2 }
+    other := GridPoint{ X: 1, Y: 2 }
+
+    if one.HasSameCoordinatesWith(other) == false {
+        t.Fail()
+    }
+}
+
+func Test_異なる格子点を等価でないと判定できる(t *testing.T) {
+    one := GridPoint{ X: 1, Y: 2 }
+    other := GridPoint{ X: 3, Y: 4 }
+
+    if one.HasSameCoordinatesWith(other) {
+        t.Fail()
+    }
+}
+
 type gridPointTestParameter struct {
     gridPoint GridPoint
     notation string

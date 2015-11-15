@@ -13,6 +13,10 @@ func (gridPoint GridPoint) GetNotation() string {
     return fmt.Sprintf("(%v,%v)", gridPoint.X, gridPoint.Y)
 }
 
+func (gridPoint GridPoint) HasSameCoordinatesWith(other GridPoint) bool {
+    return gridPoint.X == other.X && gridPoint.Y == other.Y
+}
+
 func (gridPoint GridPoint) IsNeighborOf(other GridPoint) bool {
     return gridPoint.isTopOf(other) ||
            gridPoint.isBottomOf(other) ||
