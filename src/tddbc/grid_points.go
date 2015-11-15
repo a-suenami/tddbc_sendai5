@@ -16,3 +16,7 @@ func (gridPoints GridPoints) Contains(gridPoint GridPoint) bool {
     }
     return false;
 }
+
+func (gridPoints GridPoints) IsConnected() bool {
+    return gridPoints.gridPoints[0].IsNeighborOf(gridPoints.gridPoints[1])
+}

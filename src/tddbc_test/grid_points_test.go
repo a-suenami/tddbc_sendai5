@@ -27,3 +27,20 @@ func Test_格子点の集合に指定した格子点が含まれているか判�
         }
     }
 }
+
+func Test_格子点集合の格子点同士が連結しているか判定できる(t *testing.T) {
+    parameters := []struct {
+        gridPoints GridPoints
+        result bool
+    }{
+        { gridPoints: NewGridPoints( GridPoint{ X: 3, Y: 7 }, GridPoint{ X: 3, Y: 8 } ), result: true },
+        { gridPoints: NewGridPoints( GridPoint{ X: 3, Y: 7 }, GridPoint{ X: 4, Y: 8 } ), result: false } }
+
+    for _, parameter := range parameters {
+        actual := parameter.gridPoints.IsConnected()
+        expected := parameter.result
+        if expected != actual {
+            t.Errorf("expected: %v, actual: %v", expected, actual)
+        }
+    }
+}
