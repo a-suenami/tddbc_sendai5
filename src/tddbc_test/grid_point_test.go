@@ -109,3 +109,12 @@ func Test_左下の格子点を隣り合っていないと判定する(t *testin
         t.Fail()
     }
 }
+
+func Test_同一の格子点を隣り合っていないと判定する(t *testing.T) {
+    gridPoint := GridPoint{ X: 3, Y: 7 }
+    target := GridPoint{ X: 3, Y: 7 }
+
+    if gridPoint.IsNeighborOf(target) {
+        t.Fail()
+    }
+}
