@@ -18,5 +18,11 @@ func (gridPoints GridPoints) Contains(gridPoint GridPoint) bool {
 }
 
 func (gridPoints GridPoints) IsConnected() bool {
-    return gridPoints.gridPoints[0].IsNeighborOf(gridPoints.gridPoints[1])
+    if len(gridPoints.gridPoints) == 3 {
+        return (gridPoints.gridPoints[0].IsNeighborOf(gridPoints.gridPoints[1]) && gridPoints.gridPoints[0].IsNeighborOf(gridPoints.gridPoints[2])) ||
+               (gridPoints.gridPoints[1].IsNeighborOf(gridPoints.gridPoints[2]) && gridPoints.gridPoints[1].IsNeighborOf(gridPoints.gridPoints[0])) ||
+               (gridPoints.gridPoints[2].IsNeighborOf(gridPoints.gridPoints[0]) && gridPoints.gridPoints[2].IsNeighborOf(gridPoints.gridPoints[1]))
+    } else {
+        return gridPoints.gridPoints[0].IsNeighborOf(gridPoints.gridPoints[1])
+    }
 }
