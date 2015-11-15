@@ -15,7 +15,8 @@ func Test_格子点の集合に指定した格子点が含まれているか判�
     }{
         { gridPoints: gridPoints, target: GridPoint{ X: 3, Y: 7 }, result: true },
         { gridPoints: gridPoints, target: GridPoint{ X: 4, Y: 8 }, result: true },
-        { gridPoints: gridPoints, target: GridPoint{ X: 1, Y: 2 }, result: false } }
+        { gridPoints: gridPoints, target: GridPoint{ X: 1, Y: 2 }, result: false },
+    }
 
     for _, parameter := range parameters {
         actual := parameter.gridPoints.Contains(parameter.target)
