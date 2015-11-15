@@ -20,18 +20,19 @@ func Test_Yが正しく取得できる(t *testing.T) {
     }
 }
 
-func Test_格子点の文字列表現を取得できる(t *testing.T) {
-    gridPoint := GridPoint{ X: 1, Y: 2 }
-
-    if "(1,2)" != gridPoint.getNotation() {
-        t.Errorf("expected: \"(1,2)\", actual: \"%v\"", gridPoint.getNotation())
-    }
+type gridPointTestParameter struct {
+    gridPoint GridPoint
+    notation string
 }
 
-func Test_格子点の文字列表現を取得できる2(t *testing.T) {
-    gridPoint := GridPoint{ X: 4, Y: 7 }
+func Test_格子点の文字列表現を取得できる(t *testing.T) {
+    gridPointTestParameters := []gridPointTestParameter{
+        gridPointTestParameter{ gridPoint: GridPoint{ X: 1, Y: 2 }, notation: "(1,2)" },
+        gridPointTestParameter{ gridPoint: GridPoint{ X: 4, Y: 7 }, notation: "(4,7)" } }
 
-    if "(4,7)" != gridPoint.getNotation() {
-        t.Errorf("expected: \"(4,7)\", actual: \"%v\"", gridPoint.getNotation())
+    for _, parameter := range gridPointTestParameters {
+        if parameter.notation != parameter.gridPoint.getNotation() {
+            t.Errorf("expected: \"%v\", actual: \"%v\"", parameter.notation, parameter.gridPoint.getNotation())
+        }
     }
 }
