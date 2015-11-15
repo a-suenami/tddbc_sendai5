@@ -9,11 +9,11 @@ type GridPoint struct {
     Y int
 }
 
-func (gridPoint GridPoint) getNotation() string {
+func (gridPoint GridPoint) GetNotation() string {
     return fmt.Sprintf("(%v,%v)", gridPoint.X, gridPoint.Y)
 }
 
-func (gridPoint GridPoint) isNeighborOf(other GridPoint) bool {
+func (gridPoint GridPoint) IsNeighborOf(other GridPoint) bool {
     return gridPoint.isTopOf(other) ||
            gridPoint.isBottomOf(other) ||
            gridPoint.isRightOf(other) ||
