@@ -2,7 +2,8 @@ package tddbc_test
 
 import (
     "testing"
-    . "tddbc"
+
+    . "github.com/a-suenami/tddbc_sendai5"
 )
 
 func Test_格子点の集合に指定した格子点が含まれているか判定できる(t *testing.T) {

@@ -2,7 +2,8 @@ package tddbc_test
 
 import (
     "testing"
-    . "tddbc"
+
+    . "github.com/a-suenami/tddbc_sendai5"
 )
 
 func Test_Xが正しく取得できる(t *testing.T) {
